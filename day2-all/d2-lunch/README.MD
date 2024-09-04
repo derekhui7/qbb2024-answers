@@ -34,7 +34,7 @@
 
 - "sed "s/ /\t/g" genes.gtf > gene-tabs.gtf"
 - To change the tabs into spaces 
-- "cut -f 1,4,5,13,14 gene-tabs.gtf > gene-tabs.bed"
+- "cut -f 1,4,5,14 gene-tabs.gtf > gene-tabs.bed"
 - Print out the desired fields into a bed file
 
 
