@@ -10,10 +10,8 @@
 
 - 'cut -f 1 hg38-gene-metadata-go.tsv | uniq -c | sort -n'
 - ENSG00000168036 has the most go_ids at 273
-- 'grep "ENSG00000168036" hg38-gene-metadata-go.tsv > hg38-gene-metadata-go-ENSG00000168036.tsv'
-- Created new file based on gene_id
-- 'less -S hg38-gene-metadata-go-ENSG00000168036.tsv | sort -f -k 3' 
-- Sorted by alphabetical order in name_1006 column 
+- 'sort -f -k 3 hg38-gene-metadata-go.tsv | grep "ENSG00000168036" > hg38-gene-metadata-go-ENSG00000168036.tsv | less -S'
+- Sorted by alphabetical order in name_1006 column, and filter all rows with ENSG00000168036 and view 
 - Based on the go terms, we suspect that this gene is a key factor in determining cell fate decisions and development. 
 
 ## Answer 3 
