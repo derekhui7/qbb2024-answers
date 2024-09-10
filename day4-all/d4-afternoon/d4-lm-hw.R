@@ -37,7 +37,7 @@ ggplot(aau_combined, aes(x = Father_age, y = n_paternal_dnm)) +
 #Mother model
 lm(aau_combined, formula = n_maternal_dnm ~ 1 + Mother_age) %>%
   summary()
-#The coefficient on the mother's age is 0.37757 
+#The coefficient on the mother's age is 0.37757 which means that for every year the mother gets older, the number of maternal dnms increase by 0.37757
 #The p-value of 2^(-16) indicates that it is a statistically significant relationship and it has a quite significant impact
 #The R^2 value, however, suggests only 22.55% of the data can be explained through the model
 
@@ -46,7 +46,7 @@ lm(aau_combined, formula = n_maternal_dnm ~ 1 + Mother_age) %>%
 #Father model
 lm(aau_combined, formula = n_paternal_dnm ~ 1 + Father_age) %>%
   summary()
-#The coefficient on the father's age is 1.35384
+#The coefficient on the mother's age is 1.35384 which means that for every year the father gets older, the number of paternal dnms increase by 1.35384
 #The p-value of 2^(-16) indicates that it is a statistically significant relationship
 #As mentioned before, the R^2 value suggests that 61.78% of the data can be explained through the model
 #The association is significant as the p-value for the F-statistic is less than 0.001
@@ -77,5 +77,7 @@ testDf <- data.frame(
 
 anova_result <- aov(n_dnm ~ parent, data = testDf)
 summary(anova_result)
-#Since we get the p-value from anova which is significant, we can confidently say that there is a difference between paternal and materal DNMs.
+#I used the anova test to understand the variance of the two groups and thus comparing them to see the difference between the two 
+#While a two-way T-test would have worked, the anova test would have worked for even more variables than two that we tested for
+#Since we get the p-value of <2^(-16) from anova which is significant, we can confidently say that there is a difference between paternal and materal DNMs.
 
