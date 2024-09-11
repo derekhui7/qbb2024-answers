@@ -76,8 +76,8 @@ longest_list_key = max(tissue_number, key=tissue_number.get)
 #print(longest_list_key)
 #The tissue with the most column is skeletal muscle
 
-longest_list_key = min(tissue_number, key=tissue_number.get)
-#print(longest_list_key)
+shortest_list_key = min(tissue_number, key=tissue_number.get)
+#print(shortest_list_key)
 #The tissue with the least column is Leukemia cell line cells 
 
 #6 Create gene name vs expression 
@@ -123,6 +123,7 @@ for gene in gene_name:
 #7 Create a .tsv file
 tsv_file = open("Expression_values.tsv", mode = "w")
 #Sort by key first 
+
 for key, value in gene_ex_value.items():
     #Sort by the expression value by espression array
     for i in range(len(value)):
