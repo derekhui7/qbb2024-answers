@@ -65,17 +65,22 @@ for tissue, samples in tissue_dict.items():
             sample_dict[tissue].append(position)
 #print(sample_dict)
 
+#Create a new dictionary where the tissue is the key and the value is the amount of columns for that tissue 
 tissue_number = {}
 for tissue, lengths in sample_dict.items():
+    #Create a dictionary with tissue as key and a list as the value
     tissue_number.setdefault(tissue, [])
+    #Allow the value to be the amount of columns by referencing previous dictionary
     tissue_lengths = len(sample_dict[tissue])
     tissue_number[tissue] = tissue_lengths
 #print(tissue_number)
 
+#Use the max() function to find the most amount of columns for any tissue and then print out the tissue corresponded to it 
 longest_list_key = max(tissue_number, key=tissue_number.get)
 #print(longest_list_key)
 #The tissue with the most column is skeletal muscle
 
+#Use the min() function to find the least amount of columns for any tissue and then print out the tissue corresponded to it 
 shortest_list_key = min(tissue_number, key=tissue_number.get)
 #print(shortest_list_key)
 #The tissue with the least column is Leukemia cell line cells 
