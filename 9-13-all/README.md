@@ -39,4 +39,4 @@
 - ATTCTTATTCATTGATTT
 
 ## Answer 2.6
-- Firstly, we have to divide the genome into overlapping k-mers, the value for k has to be carefully chosen as if k is too small, too many repeating k-mers in the genome would cause ambiguity resulting the genome have too many variations while reconstructing. After we divide the genome, we would create a De bruijn graph using the k-mer pieces, the edges act as nodes. Then we would want to find a Eulerian path which means that every path between these edges will be walked exactly once thus creating the complete genome sequence. 
+- Firstly, we divided the genome into overlapping reads of 5-mers, the value for k has to be carefully chosen as if k is too small, too many repeating k-mers in the genome would cause ambiguity resulting the genome have too many variations while reconstructing, thus we chose k=3 allowing each reads to have two edges. We would then create a De bruijn graph using the two edges where the edges act as nodes. Then we would want to find a Eulerian path which means that every path between these edges will be walked exactly once thus creating the complete genome sequence. 
