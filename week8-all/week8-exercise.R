@@ -16,12 +16,18 @@ gut
 #3 dimension reduction datasets are present
 #X_pca, X_tsne, X_umap
 
-columndata <- colData(gut)
+colData(gut)
 as.data.frame(colData(gut))
-colnames(columndata)
+colnames(colData(gut))
 View(columndata@metadata)
 set.seed(1234)
 plotReducedDim(gut, "X_umap", colour_by="broad_annotation")
+
+#Q2
+#There are 39 columns
+#The broad_annotations are interesting since it help identify the cell cluster types
+#Additionally, n_counts and n_genes both look interesting as they are important QC metrics
+
 
 #Step2
 genecount <- rowSums(assay(gut))
